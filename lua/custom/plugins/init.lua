@@ -2,4 +2,34 @@
 --  I promise not to create any merge conflicts in this directory :)
 --
 -- See the kickstart.nvim README for more information
-return {}
+return {
+  {
+    'laytan/cloak.nvim',
+    config = function()
+      require('cloak').setup {
+        enabled = true,
+        cloak_character = '*',
+        -- The applied highlight group (colors) on the cloaking, see `:h highlight`.
+        highlight_group = 'Comment',
+        -- Set to true to cloak Telescope preview buffers. (Required feature not in 0.1.x)
+        cloak_telescope = true,
+        patterns = {
+          {
+            -- Match any file starting with '.env'.
+            -- This can be a table to match multiple file patterns.
+            file_pattern = {
+              '/Users/kennethkorcal/Documents/projects/learn-spanish/quiz/batch-*.txt',
+              '/Users/kennethkorcal/Documents/projects/learn-japanese/quiz/batch-*.txt',
+              '.env*',
+            },
+            -- Match an equals sign and any character after it.
+            -- This can also be a table of patterns to cloak,
+            -- example: cloak_pattern = { ':.+', '-.+' } for yaml files.
+            -- cloak_pattern = '=.+',
+            cloak_pattern = { ':.+', '-.+', '=.+' },
+          },
+        },
+      }
+    end,
+  },
+}
