@@ -121,7 +121,7 @@ end)
 -- Enable break indent
 vim.o.breakindent = true
 
--- Enable smart indent
+-- Custom: enable smart indent
 vim.o.smartindent = true
 
 -- Save undo history
@@ -168,6 +168,12 @@ vim.o.scrolloff = 10
 -- instead raise a dialog asking if you wish to save the current file(s)
 -- See `:help 'confirm'`
 vim.o.confirm = true
+
+-- Custom: recommended tab settings
+vim.o.tabstop = 8
+vim.o.shiftwidth = 2
+vim.o.softtabstop = -1
+vim.o.expandtab = true
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
