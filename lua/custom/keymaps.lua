@@ -3,6 +3,7 @@ vim.keymap.set('n', '<leader>;x', ':cclose<CR>', { desc = 'Custom: Close Quickfi
 vim.keymap.set('n', '<leader>;n', ':cnext<CR>', { desc = 'Custom: Next Quickfix List' })
 vim.keymap.set('n', '<leader>;p', ':cprev<CR>', { desc = 'Custom: Previous Quickfix List' })
 vim.keymap.set('n', '<leader>;c', ':CloakToggle<CR>', { desc = 'Custom: Toggle Cloak' })
+vim.keymap.set('n', '<leader>;l', ':lua vim.diagnostic.enable(not vim.diagnostic.is_enabled())<CR>', { desc = 'Custom: Toggle diagnostic lint' })
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Custom: Move highlighted text down' })
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Custom: Move highlighted text up' })
 vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Custom: Allow next search terms to stay in the middle' })
